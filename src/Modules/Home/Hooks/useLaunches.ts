@@ -12,7 +12,11 @@ const useLaunches = () => {
     dispatch(HomeSlice.actions.fetchLaunches());
   }, [page]);
 
-  return { launches, page };
+  const increasePage = () => {
+    dispatch(HomeSlice.actions.increasePage());
+  }
+
+  return { launches, page, increasePage };
 };
 
 export default useLaunches;

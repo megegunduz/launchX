@@ -7,6 +7,7 @@ export type Launch = {
   date: string,
   name: string,
   details: string,
+  image: string | null,
 };
 
 export type LaunchResponse = {

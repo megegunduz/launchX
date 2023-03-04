@@ -22,6 +22,7 @@ const convert = (data: LaunchData[]): Launch[] => {
       name: launchResponse.name,
       date: launchResponse.date_utc,
       details: launchResponse.details,
+      image: launchResponse.links.patch.small,
     });
   });
 }

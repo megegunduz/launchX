@@ -1,20 +1,33 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+
+import { View, FlatList } from 'react-native';
+import LaunchCard from '../Components/LaunchCard';
+
 import useLaunches from '../Hooks/useLaunches';
+
+import styles from '../styles/HomeScreenStyles';
 
 const HomeScreen = (props: NativeStackScreenProps<{}>): React.ReactElement => {
 
-  const { launches, page } = useLaunches();
+  const { launches, increasePage } = useLaunches();
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={styles.container}>
       {
-        launches?.map((launch, index) => (
-          <View key={`launch-${index}`}>
-            <Text>{launch.name}</Text>
-          </View>
-        ))
+        launches.length > 0 ?
+          <FlatList
+            style={styles.flatList}
+            contentContainerStyle={styles.listContentContainer}
+            numColumns={2}
+            data={launches}
+            keyExtractor={(item, index) => `launch-${ index }`}
+            renderItem={({ item, index }) => <LaunchCard launch={item} />}
+            showsVerticalScrollIndicator={false}
+            onEndReached={increasePage}
+          />
+          :
+          null
       }
     </View>
   );
