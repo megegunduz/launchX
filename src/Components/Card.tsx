@@ -16,6 +16,7 @@ const Card = (props: CardProps): JSX.Element => {
       disabled={!onPress}
       activeOpacity={0.75}
       style={[styles.container, style]}
+      onPress={onPress}
     >
       {children}
     </TouchableOpacity>
