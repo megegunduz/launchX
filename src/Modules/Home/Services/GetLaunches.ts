@@ -23,6 +23,8 @@ const convert = (data: LaunchData[]): Launch[] => {
       date: launchResponse.date_utc,
       details: launchResponse.details,
       image: launchResponse.links.patch.small,
+      detailImage: launchResponse.links.patch.large,
+      failures: launchResponse.failures,
     });
   });
 }

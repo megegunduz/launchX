@@ -6,8 +6,14 @@ export type HomeState = {
 export type Launch = {
   date: string,
   name: string,
-  details: string,
+  details: string | null,
   image: string | null,
+  detailImage: string | null,
+  failures: {
+    time: number | null,
+    altitude: number |null,
+    reason: string |null,
+  }[] | null;
 };
 
 export type LaunchResponse = {
@@ -29,12 +35,12 @@ export type LaunchData = {
   rocker: string | null,
   success: boolean | null,
   failures: {
-    time: number,
-    altitude: number,
-    reason: string,
+    time: number | null,
+    altitude: number | null,
+    reason: string | null,
   }[] | null,
   upcoming: boolean,
-  details: string,
+  details: string | null,
   fairings: {
     reused: boolean | null,
     recovery_attemp: boolean | null,
