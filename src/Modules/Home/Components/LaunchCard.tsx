@@ -3,7 +3,7 @@ import { Text, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Card } from '../../../Components';
 
-import { Launch } from '../Types';
+import { Launch } from '../../../Types';
 import type { AppStackNavigationProp } from '../../../Navigation';
 import styles from '../styles/LaunchCardStyles';
 import { ScreenNames } from '../../../Constants';

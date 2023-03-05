@@ -1,6 +1,6 @@
 import { call, fork, takeEvery, select, put } from 'redux-saga/effects';
 import { getLaunches } from '../Services/GetLaunches';
-import { Launch } from '../Types';
+import { Launch } from '../../../Types';
 import { HomeSlice, HomeSelectors } from './HomeRedux';
 
 function* watchFetchLaunches() {

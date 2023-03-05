@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../../Redux';
-import { HomeState, Launch } from '../Types';
+import { HomeState } from '../Types';
+import { Launch } from '../../../Types';
 
 const initialState: HomeState = {
   launches: [],
@@ -22,6 +23,6 @@ export const HomeSlice = createSlice({
 });
 
 export const HomeSelectors = {
-  launches: (state: RootState): Launch[] => state[HomeSlice.name].launches,
-  page: (state: RootState): number => state[HomeSlice.name].page,
+  launches: (state: RootState): HomeState['launches'] => state[HomeSlice.name].launches,
+  page: (state: RootState): HomeState['page'] => state[HomeSlice.name].page,
 };

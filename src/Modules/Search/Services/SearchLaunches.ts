@@ -1,15 +1,18 @@
 import client, { type AxiosResponse } from '../../../Utils/AxiosInstance';
 import { Launch, LaunchData, LaunchResponse } from '../../../Types';
 
-type getLaunchesArgs = {
-  page: number,
-}
+type searchLaunchArgs = {
+  date: string,
+};
 
-const getLaunches = async (props: getLaunchesArgs): Promise<Launch[]> => {
+export const searchLaunches = async (params: searchLaunchArgs): Promise<Launch[]> => {
   const res: AxiosResponse<LaunchResponse> = await client.post('query', {
-    options: {
-      page: props.page,
-    }
+    query: {
+      "date_utc": {
+        "$gte": params.date,
+        "$lte": params.date,
+      }
+    },
   });
 
   return convert(res.data.docs);
@@ -17,15 +20,13 @@ const getLaunches = async (props: getLaunchesArgs): Promise<Launch[]> => {
 
 const convert = (data: LaunchData[]): Launch[] => {
   return data.map(launchResponse => {
-    return({
+    return ({
       name: launchResponse.name,
       date: launchResponse.date_utc,
       details: launchResponse.details,
       image: launchResponse.links.patch.small,
       detailImage: launchResponse.links.patch.large,
       failures: launchResponse.failures,
-    });
-  });
-}
-
-export { getLaunches }
+    })
+  })
+};
