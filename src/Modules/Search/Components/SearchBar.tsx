@@ -5,7 +5,7 @@ import { DatePicker } from '../../../Components';
 
 import styles from '../styles/SearchBarStyles';
 import { AppStackNavigationProp } from '../../../Navigation';
-import { ScreenNames } from '../../../Constants';
+import { ScreenNames, Texts } from '../../../Constants';
 import { convertToISOString } from '../../../Utils/DateTimeUtils';
 
 const SearchBar = () => {
@@ -29,7 +29,7 @@ const SearchBar = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{'Search a launch with a specific date'}</Text>
+      <Text style={styles.title}>{Texts.search.placeHolder}</Text>
       <DatePicker onChange={navigateToSearch} />
     </View>
   )

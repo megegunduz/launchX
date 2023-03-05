@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { Texts } from '../../../Constants';
 
 const NoResult = (): JSX.Element => {
   return (
     <View>
-      <Text>{'No result for selected date.'}</Text>
+      <Text>{Texts.search.noResult}</Text>
     </View>
   );
 };

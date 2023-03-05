@@ -10,18 +10,29 @@ const AppStack = createNativeStackNavigator<AppStackParamList>();
 
 const AppNavigation = (props: object): JSX.Element => {
   return (
-    <AppStack.Navigator>
+    <AppStack.Navigator screenOptions={{
+      headerTitleAlign: 'center',
+    }}>
       <AppStack.Screen
         name={ScreenNames.HOME}
         component={HomeScreen}
+        options={{
+          title: 'LaunchX'
+        }}
       />
       <AppStack.Screen
         name={ScreenNames.DETAIL}
         component={DetailScreen}
+        options={{
+          title: 'Details'
+        }}
       />
       <AppStack.Screen
         name={ScreenNames.SEARCH}
         component={SearchScreen}
+        options={{
+          title: 'Search'
+        }}
       />
     </AppStack.Navigator>
   );

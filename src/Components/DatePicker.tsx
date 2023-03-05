@@ -6,6 +6,7 @@ import Icon from './Icon';
 import Svgs from '../Assets/Svgs';
 
 import getStyles from './styles/DatePickerStyles';
+import { Texts } from '../Constants';
 
 type DatePickerProps = {
   defaultValue?: Date,
@@ -44,7 +45,7 @@ const DatePicker = ({ defaultValue = new Date, onChange, onClose, pickerText }: 
       <View style={styles.container}>
         <TouchableOpacity style={styles.touchable} onPress={() => setShowPicker(true)}>
         <View style={styles.textContainer}>
-          <Text style={styles.text}>{!isSelected ? 'Pick Date' : value ? convertToDisplayFormat(value) : ''}</Text>
+          <Text style={styles.text}>{!isSelected ? Texts.datePicker.placeholder : value ? convertToDisplayFormat(value) : ''}</Text>
         </View>
           <Icon svg={Svgs.Calendar} containerStyle={styles.iconContainer} iconStyle={{ width: 25, height: 25 }} colors={['black']} />
         </TouchableOpacity>
