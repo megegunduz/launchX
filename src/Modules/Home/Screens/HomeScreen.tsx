@@ -2,7 +2,7 @@ import React from 'react';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import { View, FlatList } from 'react-native';
-import LaunchCard from '../Components/LaunchCard';
+import { LaunchCard } from '../../../Components';
 
 import useLaunches from '../Hooks/useLaunches';
 import { SearchBar } from '../../Search';

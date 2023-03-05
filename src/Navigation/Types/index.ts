@@ -1,5 +1,5 @@
 import { ScreenNames } from '../../Constants'
-import type { Launch } from '../../Modules/Home';
+import type { Launch } from '../../Types';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 export type AppStackParamList = {

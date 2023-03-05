@@ -1,10 +1,13 @@
 import Calendar from './Calendar';
 import Error from './Error';
 import Close from './Close';
-export type { SvgProps } from './SvgProps';
+import NoImage from './NoImage';
 
 export default {
   Calendar,
   Error,
   Close,
+  NoImage,
 };
+
+export type { SvgProps } from './SvgProps';

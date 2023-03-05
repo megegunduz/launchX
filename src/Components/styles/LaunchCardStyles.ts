@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { Fonts, Metrics } from '../../../Constants';
+import { Fonts, Metrics } from '../../Constants';
 
 export default StyleSheet.create({
   card: {

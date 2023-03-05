@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { SafeAreaView, ScrollView, View, Text, Image } from 'react-native';
+import { SafeAreaView, ScrollView, View, Text } from 'react-native';
+import { Image } from '../../../Components';
 import { DetailScreenProps } from '../Types';
 
 import styles from '../styles/DetailScreenStyles';
@@ -19,11 +20,9 @@ const DetailScreen = (props: DetailScreenProps): JSX.Element => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView style={styles.container} >
-        {!!detailImage && (
-          <View style={styles.imageContainer}>
-            <Image source={{ uri: detailImage }} style={styles.image} />
-          </View>
-        )}
+        <View style={styles.imageContainer}>
+          <Image imageUrl={detailImage} style={styles.image} />
+        </View>
         <Text style={styles.text}>{`Name: ${ name }`}</Text>
         {!!details && <Text style={styles.text}>{`Details: ${ details }`}</Text>}
         <Text style={styles.text}>{`Date: ${ convertToDisplayFormat(date) }`}</Text>
