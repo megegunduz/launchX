@@ -5,6 +5,7 @@ import { View, FlatList } from 'react-native';
 import LaunchCard from '../Components/LaunchCard';
 
 import useLaunches from '../Hooks/useLaunches';
+import { SearchBar } from '../../Search';
 
 import styles from '../styles/HomeScreenStyles';
 
@@ -14,6 +15,7 @@ const HomeScreen = (props: NativeStackScreenProps<{}>): React.ReactElement => {
 
   return (
     <View style={styles.container}>
+      <SearchBar />
       {
         launches.length > 0 ?
           <FlatList

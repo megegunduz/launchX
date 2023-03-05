@@ -1,8 +1,9 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { HomeScreen } from '../Modules/Home';
 import { ScreenNames } from '../Constants';
+import { HomeScreen } from '../Modules/Home';
 import { DetailScreen } from '../Modules/Detail';
+import { SearchScreen } from '../Modules/Search';
 import { AppStackParamList } from './Types';
 
 const AppStack = createNativeStackNavigator<AppStackParamList>();
@@ -17,6 +18,10 @@ const AppNavigation = (props: object): JSX.Element => {
       <AppStack.Screen
         name={ScreenNames.DETAIL}
         component={DetailScreen}
+      />
+      <AppStack.Screen
+        name={ScreenNames.SEARCH}
+        component={SearchScreen}
       />
     </AppStack.Navigator>
   );

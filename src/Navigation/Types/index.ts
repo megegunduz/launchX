@@ -7,6 +7,9 @@ export type AppStackParamList = {
   [ScreenNames.DETAIL]: {
     data: Launch,
   },
+  [ScreenNames.SEARCH]: {
+    searchedDate: string,
+  },
 };
 
 export type AppStackNavigationProp = NativeStackNavigationProp<AppStackParamList>
