@@ -1,15 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from '../../../Redux';
+import { ReducerNames, RootState } from '../../../Redux';
 import { HomeState } from '../Types';
 import { Launch } from '../../../Types';
 
 const initialState: HomeState = {
   launches: [],
   page: 1,
+  error: null,
 }
 
 export const HomeSlice = createSlice({
-  name: 'home',
+  name: ReducerNames.HOME,
   initialState,
   reducers: {
     fetchLaunches: () => { },
@@ -18,6 +19,9 @@ export const HomeSlice = createSlice({
     },
     increasePage: (state: HomeState) => {
       state.page += 1;
+    },
+    setError: (state: HomeState, action: PayloadAction<Error>) => {
+      state.error = action.payload;
     },
   },
 });

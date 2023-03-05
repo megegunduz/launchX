@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from '../../../Redux';
+import { ReducerNames, RootState } from '../../../Redux';
 import { SearchState } from '../Types';
 
 const initialState: SearchState = {
@@ -9,7 +9,7 @@ const initialState: SearchState = {
 };
 
 export const SearchSlice = createSlice({
-  name: 'search',
+  name: ReducerNames.SEARCH,
   initialState,
   reducers: {
     searchLaunches: (state: SearchState, action: PayloadAction<string>) => {},

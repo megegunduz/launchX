@@ -14,5 +14,5 @@ export type SearchScreenRouteProp = SearchScreenProps['route'];
 export type SearchState = {
   launches: Launch[] | null,
   isLoading: boolean,
-  error: string |null,
+  error: Error | null,
 };

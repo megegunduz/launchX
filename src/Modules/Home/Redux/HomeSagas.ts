@@ -16,7 +16,7 @@ function* workerFetchLaunches() {
     const newLaunches = page === 1 ? data : [...launches, ...data];
     yield put(HomeSlice.actions.setLaunches(newLaunches));
   } catch (error) {
-    // Handle error
+    yield put(HomeSlice.actions.setError(error))
   } finally {
     // Sef loading false
   }
